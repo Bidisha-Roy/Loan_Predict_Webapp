@@ -14,9 +14,9 @@ matplotlib.use('Agg')
 
 
 
-data=pd.read_csv('loan_data.csv')
+data=pd.read_csv('./loan_data.csv')
 # loading the saved model
-loaded_model = pickle.load(open('trained_model.sav', 'rb'))
+loaded_model = pickle.load(open('./trained_model.sav', 'rb'))
 
 #creating a function for prediction
 
@@ -69,8 +69,8 @@ def main():
         
     if selected == "Home":
      
-      #  st.image('vaccine.jpg')
-        image = Image.open('loan_photo.jpg')
+      
+        image = Image.open('./loan_photo.jpg')
         
 
 
@@ -186,7 +186,7 @@ def main():
             st.success(diagnosis)
             
     if selected == "Visualize":  
-        data1=pd.read_csv('loan_data.csv')
+        data1=pd.read_csv('./loan_data.csv')
         data1.replace({"Loan_Status":{'N':0,'Y':1}},inplace=True)
         data1.replace({'Education':{'Graduate':1,'Not Graduate':0}},inplace=True)
         data1 = data1.replace(to_replace='3+', value=4)
